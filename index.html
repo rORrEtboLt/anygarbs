@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="AnyGarbs builds swarms of AI-driven robots that collect, sort and recycle any garbage into raw materials: compost, biogas, plastic, paper, metals, rare earths, gold and silver.">
+<title>AnyGarbs</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="hud">
+  <div class="wrap">
+    <a class="logo" href="#top"><canvas class="spr" data-spr="bot" data-scale="2" aria-hidden="true"></canvas><span>ANYGARBS<small>any garbage → raw material</small></span></a>
+    <nav class="nav" aria-label="Sections">
+      <a href="#loop">LOOP</a><a href="#materials">MATERIALS</a><a href="#swarm">SWARM</a><a href="#lab">LAB</a><a href="#market">MARKET</a>
+    </nav>
+    <a class="btn" href="#start">▶ PRESS START</a>
+  </div>
+</header>
+
+<main id="top" class="wrap">
+  <div class="screen" aria-label="Animated scene: drones drop garbage on a landfill pile, a hauler robot feeds a conveyor, a sorter machine turns it into graded materials that stack in crates.">
+    <div class="hudtxt l">WORLD 1-1 · LANDFILL</div>
+    <div class="hudtxt r">MATERIALS 09 · SWARM 05</div>
+    <canvas id="scene" width="384" height="176"></canvas>
+  </div>
+
+  <div class="panel dialog">
+    <p class="eyebrow">New game · World: Earth</p>
+    <h1>Any garbage. Anywhere. Back into raw material.</h1>
+    <p class="lead">AnyGarbs builds swarms of AI-driven robots that find waste on the map, collect it, sort it down to the material, and recycle it into feedstock that factories buy. <b>Garbage in.</b> Compost, biogas, plastic, paper, steel, copper, rare earths, gold and silver out.</p>
+    <div class="cta">
+      <a class="btn" href="#start">▶ PRESS START</a>
+      <a class="btn alt" href="#swarm">MEET THE SWARM</a>
+    </div>
+    <span class="cursor" aria-hidden="true">▼</span>
+  </div>
+
+  <!-- THE LOOP -->
+  <section class="section" id="loop">
+    <div class="head"><p class="eyebrow">Quest log</p><h2>THE LOOP</h2><span class="rule"></span></div>
+    <p class="intro">Every pile on the map is a level. The swarm runs the same four moves on each one, and the order matters: nothing is collected that can't be sorted, and nothing is sorted that can't be sold.</p>
+    <div class="loop">
+      <div class="panel step">
+        <span class="ico"><canvas class="spr" data-spr="drone" data-scale="4" aria-hidden="true"></canvas></span>
+        <span class="tag">STEP 1</span><h3>SCOUT</h3>
+        <p>Drones and public data map every dump, ditch, bin and landfill. Each pile gets a tile with an estimated mass and material mix.</p>
+      </div>
+      <div class="panel step">
+        <span class="ico"><canvas class="spr" data-spr="hauler" data-scale="4" aria-hidden="true"></canvas></span>
+        <span class="tag">STEP 2</span><h3>COLLECT</h3>
+        <p>Hauler bots and trucks run routes the planner sets, by the tonne. Wet organics move first, before they rot into methane.</p>
+      </div>
+      <div class="panel step">
+        <span class="ico"><canvas class="spr" data-spr="bot" data-scale="4" aria-hidden="true"></canvas></span>
+        <span class="tag">STEP 3</span><h3>SEGREGATE</h3>
+        <p>Sorter bots use vision, near-infrared and X-ray to split by material, not category. PET from HDPE. Copper from brass. Magnet from casing.</p>
+      </div>
+      <div class="panel step">
+        <span class="ico"><canvas class="spr" data-spr="refiner" data-scale="4" aria-hidden="true"></canvas></span>
+        <span class="tag">STEP 4</span><h3>TRANSFORM &amp; SELL</h3>
+        <p>Modular refiners turn each stream into a graded product. A trading agent lists it, prices it and ships it to the buyer.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- INVENTORY -->
+  <section class="section" id="materials">
+    <div class="head"><p class="eyebrow">Inventory</p><h2>WHAT COMES OUT</h2><span class="rule"></span></div>
+    <p class="intro">Nine product lines, each with a grade a buyer can put in a purchase order. <b>Grades shown are the spec each line is built to.</b></p>
+    <div class="inv">
+      <div class="item"><div class="slot"><canvas class="spr" data-spr="compost" data-scale="7"></canvas></div><div><h3>COMPOST</h3><p class="grade">Screened ≤ 20 mm, cured 8 weeks, pathogen-free</p><p class="from"><b>from</b> food scraps, garden waste, market waste</p></div></div>
+      <div class="item"><div class="slot"><canvas class="spr" data-spr="gas" data-scale="7"></canvas></div><div><h3>BIOGAS</h3><p class="grade">55–65 % CH₄ raw, upgradeable to biomethane</p><p class="from"><b>from</b> wet organics in on-site digesters</p></div></div>
+      <div class="item"><div class="slot"><canvas class="spr" data-spr="pellet" data-scale="7"></canvas></div><div><h3>PLASTIC</h3><p class="grade">PET flake, HDPE and PP pellets, colour-sorted</p><p class="from"><b>from</b> bottles, packaging, crates, film</p></div></div>
+      <div class="item"><div class="slot"><canvas class="spr" data-spr="pulp" data-scale="7"></canvas></div><div><h3>PAPER PULP</h3><p class="grade">OCC and mixed grades, de-inked, baled</p><p class="from"><b>from</b> cardboard, office paper, cartons</p></div></div>
+      <div class="item"><div class="slot"><canvas class="spr" data-spr="ingot" data-scale="7"></canvas></div><div><h3>STEEL &amp; ALUMINIUM</h3><p class="grade">Shredded, baled or cast to ingot by alloy</p><p class="from"><b>from</b> cans, appliances, frames, wire</p></div></div>
+      <div class="item"><div class="slot"><canvas class="spr" data-spr="copper" data-scale="7"></canvas></div><div><h3>COPPER</h3><p class="grade">99.9 % cathode grade after electro-refining</p><p class="from"><b>from</b> cable, motors, transformers, PCBs</p></div></div>
+      <div class="item"><div class="slot"><canvas class="spr" data-spr="rare" data-scale="7"></canvas></div><div><h3>RARE EARTHS</h3><p class="grade">Nd, Pr, Dy oxides, magnet-grade</p><p class="from"><b>from</b> hard-drive, speaker and motor magnets</p></div></div>
+      <div class="item"><div class="slot"><canvas class="spr" data-spr="gold" data-scale="7"></canvas></div><div><h3>GOLD</h3><p class="grade">≥ 99.5 % from board and connector recovery</p><p class="from"><b>from</b> phones, laptops, servers, plating</p></div></div>
+      <div class="item"><div class="slot"><canvas class="spr" data-spr="silver" data-scale="7"></canvas></div><div><h3>SILVER</h3><p class="grade">Refined granule from contact and cell recovery</p><p class="from"><b>from</b> switches, solar panels, X-ray film</p></div></div>
+    </div>
+  </section>
+
+  <!-- SWARM -->
+  <section class="section" id="swarm">
+    <div class="head"><p class="eyebrow">Party</p><h2>THE SWARM</h2><span class="rule"></span></div>
+    <p class="intro">Five classes, one planner. Each bot is cheap, replaceable and specialised, and the planner treats the map as the board: every pile is a job, every bot is a piece.</p>
+    <div class="swarm">
+      <div class="panel card">
+        <div class="portrait"><canvas class="spr" data-spr="drone" data-scale="7"></canvas></div>
+        <div class="body"><h3>SCOUT</h3><p class="role">AERIAL · MAPPING</p><p>Flies the grid, photographs piles, estimates mass and mix, tags what's new since last pass.</p>
+          <div class="stats"><span>VISION</span><span class="pips" data-n="5"></span><span>GRIP</span><span class="pips" data-n="0"></span><span>RANGE</span><span class="pips" data-n="5"></span><span>PAYLOAD</span><span class="pips" data-n="1"></span></div></div>
+      </div>
+      <div class="panel card">
+        <div class="portrait"><canvas class="spr" data-spr="hauler" data-scale="7"></canvas></div>
+        <div class="body"><h3>HAULER</h3><p class="role">GROUND · COLLECTION</p><p>Tracked, weatherproof, dumb by design. Loads at the pile, runs the route, tips at the belt.</p>
+          <div class="stats"><span>VISION</span><span class="pips" data-n="2"></span><span>GRIP</span><span class="pips" data-n="3"></span><span>RANGE</span><span class="pips" data-n="3"></span><span>PAYLOAD</span><span class="pips" data-n="5"></span></div></div>
+      </div>
+      <div class="panel card">
+        <div class="portrait"><canvas class="spr" data-spr="bot" data-scale="7"></canvas></div>
+        <div class="body"><h3>SORTER</h3><p class="role">BELT · SEGREGATION</p><p>Vision, NIR and XRF on the head, a gripper on the arm. Sorts to material at belt speed.</p>
+          <div class="stats"><span>VISION</span><span class="pips" data-n="5"></span><span>GRIP</span><span class="pips" data-n="5"></span><span>RANGE</span><span class="pips" data-n="1"></span><span>PAYLOAD</span><span class="pips" data-n="2"></span></div></div>
+      </div>
+      <div class="panel card">
+        <div class="portrait"><canvas class="spr" data-spr="refiner" data-scale="7"></canvas></div>
+        <div class="body"><h3>REFINER</h3><p class="role">CONTAINER · PROCESSING</p><p>A shipping-container module per stream: digester, extruder, pulper, shredder, furnace, leach cell.</p>
+          <div class="stats"><span>VISION</span><span class="pips" data-n="3"></span><span>GRIP</span><span class="pips" data-n="2"></span><span>RANGE</span><span class="pips" data-n="0"></span><span>PAYLOAD</span><span class="pips" data-n="4"></span></div></div>
+      </div>
+      <div class="panel card">
+        <div class="portrait"><canvas class="spr" data-spr="trader" data-scale="7"></canvas></div>
+        <div class="body"><h3>TRADER</h3><p class="role">SOFTWARE · SALES</p><p>An agent, not a body. Watches commodity prices, lists lots, negotiates, books freight, sends the invoice.</p>
+          <div class="stats"><span>VISION</span><span class="pips" data-n="4"></span><span>GRIP</span><span class="pips" data-n="0"></span><span>RANGE</span><span class="pips" data-n="5"></span><span>PAYLOAD</span><span class="pips" data-n="0"></span></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LAB -->
+  <section class="section" id="lab">
+    <div class="head"><p class="eyebrow">Research</p><h2>ROBOTS THAT DESIGN ROBOTS</h2><span class="rule"></span></div>
+    <p class="intro">The swarm logs every item it fails to sort or refine. The lab turns that log into the next bot.</p>
+    <div class="lab">
+      <p class="line"><span class="prompt">lab@anygarbs:~$</span> tail failures.log</p>
+      <p class="line"><span class="warn">MISS</span>  tile 41-07 · laminated tetra-pak · sorter confidence 0.31 · 1.8 t/week</p>
+      <p class="line"><span class="warn">MISS</span>  tile 12-22 · lithium pouch cells in bag mix · hauler halted (thermal) · 0.4 t/week</p>
+      <p class="line"><span class="warn">MISS</span>  tile 08-03 · fibreglass boat hull · no refiner module · 6.0 t (one-off)</p>
+      <p class="line"><span class="prompt">lab@anygarbs:~$</span> propose --stream tetra-pak --target "PE-Al split, pulp out"</p>
+      <p class="line"><span class="ok">OK</span>    candidate: hydrapulper module v3 + eddy-current stage · sim yield 91 % · print parts: 14 · build: 9 days</p>
+      <div class="grid">
+        <div class="cell"><h3>PROPOSE</h3><p>An AI design agent drafts a gripper, sensor head or refiner module for the stream the swarm keeps missing. <b>Input: the failure log, plus real scans of the pile.</b></p></div>
+        <div class="cell"><h3>SIMULATE</h3><p>The candidate is run against recorded belt footage and digital twins of the piles. <b>Yield, energy per tonne and jam rate decide if it gets built.</b></p></div>
+        <div class="cell"><h3>FIELD TEST</h3><p>Parts are printed and machined, fitted to one bot, and run on a live route for two weeks. <b>What works ships to every swarm as a firmware and parts kit.</b></p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MARKET -->
+  <section class="section" id="market">
+    <div class="head"><p class="eyebrow">Shop</p><h2>THE MARKET</h2><span class="rule"></span></div>
+    <p class="intro">Two kinds of players. One side has garbage and wants it gone. The other side runs a mill, a smelter, a farm or a plant and wants feedstock with a paper trail.</p>
+    <div class="market">
+      <div class="panel">
+        <p class="eyebrow">For buyers</p>
+        <h3>ORDER RAW MATERIAL FROM THE MAP</h3>
+        <ul>
+          <li>Order any of the nine lines by the tonne, to a written grade.</li>
+          <li>Chain of custody from the pile tile to your dock, with scans.</li>
+          <li>Recycled-content certificates for every lot.</li>
+          <li>Priced against the exchange, delivered by the trader agent.</li>
+        </ul>
+        <a class="btn dark" href="mailto:hello@anygarbs.com?subject=Material%20order%20enquiry">REQUEST MATERIALS</a>
+      </div>
+      <div class="panel">
+        <p class="eyebrow">For cities, landfills and sites</p>
+        <h3>DEPLOY A SWARM ON YOUR PILE</h3>
+        <ul>
+          <li>Municipal landfills, transfer stations, industrial estates, campuses, event grounds.</li>
+          <li>Swarm arrives in containers. No new building, no new landfill cell.</li>
+          <li>Pay per tonne diverted, offset by your share of material sales.</li>
+          <li>Live map of what left your site and what it became.</li>
+        </ul>
+        <a class="btn dark" href="mailto:hello@anygarbs.com?subject=Deploy%20a%20swarm">DEPLOY A SWARM</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="coin" id="start">
+    <h2>INSERT COIN</h2>
+    <p>AnyGarbs is at the start of the game: building the first swarm, the first refiner container and the first buyer contracts. If you run a pile, buy materials, build robots, or want to fund the run, press start.</p>
+    <a class="btn" href="mailto:hello@anygarbs.com?subject=Press%20start">▶ PRESS START</a>
+    <p class="mail">hello@anygarbs.com</p>
+  </section>
+
+  <footer class="foot">ANYGARBS · 2026 · ANY GARBAGE, ANYWHERE, BACK INTO RAW MATERIAL</footer>
+</main>
+
+<script src="js/sprites.js"></script>
+<script src="js/page.js"></script>
+<script src="js/scene.js"></script>
+
+</body>
+</html>
